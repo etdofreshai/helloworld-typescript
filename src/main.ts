@@ -142,6 +142,14 @@ function render() {
       clock.className = 'clock'
       document.body.appendChild(clock)
     }
+    // Render build-time footer outside #app so it doesn't inherit the fadeIn animation
+    if (!document.getElementById('build-footer')) {
+      const footer = document.createElement('footer')
+      footer.id = 'build-footer'
+      footer.className = 'build-time'
+      footer.textContent = `Built: ${__BUILD_TIME__}`
+      document.body.appendChild(footer)
+    }
     app.innerHTML = `
       <h1>Hello World</h1>
       <p id="typed"></p>
@@ -149,7 +157,6 @@ function render() {
         <button id="counter" type="button">Count: ${count}</button>
         <button id="theme-btn" type="button" title="Change theme">🎨</button>
       </div>
-      <footer class="build-time">Built: ${__BUILD_TIME__}</footer>
     `
     document.querySelector('#counter')!.addEventListener('click', () => {
       count++
