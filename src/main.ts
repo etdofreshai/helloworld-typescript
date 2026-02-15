@@ -9,12 +9,20 @@ function render() {
     <h1>Hello World! 🚀</h1>
     <p>This is a Vite + TypeScript project.</p>
     <p class="build-time">Built: ${__BUILD_TIME__}</p>
+    <p id="clock" class="build-time"></p>
     <button id="counter" type="button">Count: ${count}</button>
   `
   document.querySelector('#counter')!.addEventListener('click', () => {
     count++
     render()
   })
+  updateClock()
 }
 
+function updateClock() {
+  const el = document.getElementById('clock')
+  if (el) el.textContent = new Date().toLocaleString()
+}
+
+setInterval(updateClock, 1000)
 render()
