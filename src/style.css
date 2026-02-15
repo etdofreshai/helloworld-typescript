@@ -47,10 +47,14 @@ p {
   margin-bottom: 0.4rem;
 }
 
-p.build-time {
-  font-size: 0.8rem;
+footer.build-time {
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.75rem;
   color: #555;
-  margin-top: 2rem;
   letter-spacing: 0.05em;
 }
 
