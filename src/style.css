@@ -54,6 +54,9 @@ p {
   font-size: 0.9rem;
   color: #888;
   font-variant-numeric: tabular-nums;
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 
 footer.build-time {
@@ -65,6 +68,9 @@ footer.build-time {
   font-size: 0.75rem;
   color: #999;
   letter-spacing: 0.05em;
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 
 button#counter {
