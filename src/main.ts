@@ -131,22 +131,24 @@ function updateClock() {
 
 // --- Render ---
 function render() {
-  app.innerHTML = `
-    <div id="clock" class="clock"></div>
-    <h1>Hello World! 🚀</h1>
-    <p id="typed"></p>
-    <div class="button-row">
-      <button id="counter" type="button">Count: ${count}</button>
-      <button id="theme-btn" type="button" title="Change theme">🎨</button>
-    </div>
-    <footer class="build-time">Built: ${__BUILD_TIME__}</footer>
-  `
-  document.querySelector('#counter')!.addEventListener('click', () => {
-    count++
-    render()
-    // re-type on re-render would be annoying, so only type on first render
-  })
-  document.getElementById('theme-btn')!.addEventListener('click', cycleTheme)
+  // Only build the full DOM once; after that just update the counter text
+  if (!document.getElementById('counter')) {
+    app.innerHTML = `
+      <div id="clock" class="clock"></div>
+      <h1>Hello World! 🚀</h1>
+      <p id="typed"></p>
+      <div class="button-row">
+        <button id="counter" type="button">Count: ${count}</button>
+        <button id="theme-btn" type="button" title="Change theme">🎨</button>
+      </div>
+      <footer class="build-time">Built: ${__BUILD_TIME__}</footer>
+    `
+    document.querySelector('#counter')!.addEventListener('click', () => {
+      count++
+      document.getElementById('counter')!.textContent = `Count: ${count}`
+    })
+    document.getElementById('theme-btn')!.addEventListener('click', cycleTheme)
+  }
   updateClock()
 }
 
