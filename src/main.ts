@@ -6,10 +6,11 @@ let count = 0
 
 function render() {
   app.innerHTML = `
+    <div id="clock" class="clock"></div>
     <h1>Hello World! 🚀</h1>
     <p>This is a Vite + TypeScript project.</p>
     <button id="counter" type="button">Count: ${count}</button>
-    <footer class="build-time">Built: ${__BUILD_TIME__} · <span id="clock"></span></footer>
+    <footer class="build-time">Built: ${__BUILD_TIME__}</footer>
   `
   document.querySelector('#counter')!.addEventListener('click', () => {
     count++
