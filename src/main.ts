@@ -10,6 +10,7 @@ const themes = [
   'linear-gradient(135deg, #0f2027, #203a43, #2c5364)',
   'linear-gradient(135deg, #2d1f0f, #b33a00, #ff6a00)',
   'linear-gradient(135deg, #0a2e1f, #0f5132, #198754)',
+  'linear-gradient(135deg, #4a0e2e, #8e244d, #d63384)',
 ]
 let themeIndex = 0
 
