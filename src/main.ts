@@ -133,8 +133,14 @@ function updateClock() {
 function render() {
   // Only build the full DOM once; after that just update the counter text
   if (!document.getElementById('counter')) {
+    // Render clock outside #app so it's never part of the centered/animated container
+    if (!document.getElementById('clock')) {
+      const clock = document.createElement('div')
+      clock.id = 'clock'
+      clock.className = 'clock'
+      document.body.appendChild(clock)
+    }
     app.innerHTML = `
-      <div id="clock" class="clock"></div>
       <h1>Hello World! 🚀</h1>
       <p id="typed"></p>
       <div class="button-row">
