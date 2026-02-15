@@ -141,7 +141,7 @@ function render() {
       document.body.appendChild(clock)
     }
     app.innerHTML = `
-      <h1>Hello World 2! 🚀</h1>
+      <h1>Back to Hello World! 🚀</h1>
       <p id="typed"></p>
       <div class="button-row">
         <button id="counter" type="button">Count: ${count}</button>
