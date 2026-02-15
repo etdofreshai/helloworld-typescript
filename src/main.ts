@@ -11,6 +11,7 @@ const themes = [
   'linear-gradient(135deg, #2d1f0f, #b33a00, #ff6a00)',
   'linear-gradient(135deg, #0a2e1f, #0f5132, #198754)',
   'linear-gradient(135deg, #4a0e2e, #8e244d, #d63384)',
+  'linear-gradient(135deg, #1a0533, #4b0082, #00bcd4)',
 ]
 let themeIndex = 0
 
@@ -142,7 +143,7 @@ function render() {
       document.body.appendChild(clock)
     }
     app.innerHTML = `
-      <h1>Back to Hello World! 🚀</h1>
+      <h1>Hello World</h1>
       <p id="typed"></p>
       <div class="button-row">
         <button id="counter" type="button">Count: ${count}</button>
