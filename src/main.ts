@@ -135,7 +135,7 @@ function render() {
   if (!document.getElementById('counter')) {
     app.innerHTML = `
       <div id="clock" class="clock"></div>
-      <h1>Hello World! 🚀</h1>
+      <h1>Hello World 2! 🚀</h1>
       <p id="typed"></p>
       <div class="button-row">
         <button id="counter" type="button">Count: ${count}</button>
